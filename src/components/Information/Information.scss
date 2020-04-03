@@ -1,0 +1,67 @@
+$BASIC_FONT: 'Montserrat-Medium';
+$BASIC_FONTSIZE: 16;
+
+@function remy($px) {
+  @return ($px/$BASIC_FONTSIZE)+rem;
+}
+.information:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.information {
+  background: linear-gradient(93.19deg, #255D8B 2.29%, #3A80BA 96.79%);
+  width: 100%;
+  color: white;
+  font-family: $BASIC_FONT;
+
+  & h2 {
+    font-size: remy(32);
+    padding: 2%;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  & p {
+    width: 100%;
+    font-size: remy(16);
+    padding: 2%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+.infoBlock {
+  width: 50%;
+  float: left;
+  padding: 5% 0 4% 7%;
+  @media (max-width: 1250px) {
+    padding: 2% 0 0 2%;
+  }
+  @media (max-width: 768px) {
+    padding: 5% 5% 5% 5%;
+    width: 100%
+  }
+
+  box-sizing: border-box;
+
+  .button {
+    box-sizing: border-box;
+    width: 30%;
+    margin-left: 2%;
+  }
+
+}
+.macbook {
+  @media (max-width: 768px) {
+    display: none;
+  }
+  margin-top: -2.5%;
+  width: 50%;
+  float: right;
+  & img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}

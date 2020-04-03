@@ -1,0 +1,77 @@
+$BASIC_FONT: 'Montserrat-Medium';
+$BASIC_FONTSIZE: 16;
+
+
+.homeFooter {
+  margin-top: 4%;
+  background: url('../../assets/images/Footer/background.png') no-repeat;
+  background-size: cover;
+}
+.form {
+  display: flex;
+  border: 1px solid #F1F1F1;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 0;
+  width: 35%;
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+  @media (max-width: 460px) {
+    width: 90%;
+  }
+  height: 64px;
+  background: white;
+  margin: 0 auto;
+
+  & input {
+    display: block;
+    font-size: 20px;
+    @media (max-width: 460px) {
+      font-size: 14px;
+    }
+    border: 0;
+    outline: none;
+    margin-left: 3%;
+    margin-top: 17px;
+    width: 66%;
+    height: 30px;
+  }
+  & button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2px;
+    width: 30%;
+    height: 56px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #3A80BA;
+    color: white;
+  }
+  & button:hover {
+    cursor: pointer;
+    background: lighten(#3A80BA, 20);
+  }
+}
+.footerInformation {
+  color: white;
+  padding: 2%;
+  box-sizing: border-box;
+  font-family: $BASIC_FONT;
+  display: flex;
+  margin: 4% auto 0 auto;
+
+  width: 80%;
+  @media (max-width: 460px) {
+    width: 100%;
+  }
+  justify-content: space-between;
+
+}
+.footerLogo {
+  font-size: 30px;
+  @media (max-width: 460px) {
+    font-size: 20px;
+    width: 40%;
+  }
+}

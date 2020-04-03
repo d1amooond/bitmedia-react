@@ -1,0 +1,82 @@
+
+$BASIC_FONT: 'Montserrat-Medium';
+$BASIC_FONTSIZE: 16;
+$DESCRIPTION_COLOR: #7E7E7E;
+@function remy($px) {
+  @return ($px/$BASIC_FONTSIZE)+rem;
+}
+
+
+.about {
+  margin-top: 3%;
+  width: 100%;
+  & h2 {
+    font-size: remy(32);
+    font-family: $BASIC_FONT;
+    text-align: center;
+    width: 30%;
+    @media (max-width: 460px) {
+      width: 70%;
+    }
+    margin: 0 auto;
+    font-weight: normal;
+    & span {
+      font-weight: bold;
+    }
+  }
+  & p {
+    color: $DESCRIPTION_COLOR;
+    text-align: center;
+    width: 40%;
+    @media (max-width: 460px) {
+      width: 70%;
+    }
+    margin: 0 auto;
+    padding: 2%;
+    font-size: remy(20);
+    box-sizing: border-box;
+  }
+
+}
+
+.infoBlocks {
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+  @media (max-width: 460px) {
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8%;
+}
+
+.block {
+  padding: 3%;
+  box-sizing: border-box;
+  width: 32%;
+  @media (max-width: 460px) {
+    margin: 5%;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 32px;
+  img {
+    display: block;
+    margin: 0 auto;
+    padding: 15%;
+    box-sizing: border-box;
+  }
+  h3 {
+    text-align: center;
+    margin: 0 auto;
+    font-family: $BASIC_FONT;
+  }
+  p {
+    width: 100%;
+  }
+}

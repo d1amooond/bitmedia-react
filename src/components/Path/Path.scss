@@ -1,0 +1,29 @@
+$BASIC_FONT: 'Montserrat-Medium';
+$BASIC_FONTSIZE: 16;
+
+@function remy($px) {
+  @return ($px/$BASIC_FONTSIZE)+rem;
+}
+
+.path {
+  font-size: remy(16);
+  display: flex;
+
+  & a {
+    text-decoration: none;
+    color: #CCCCCC;
+  }
+  & div {
+    margin-right: 1%;
+  }
+}
+.pathItem {
+  &:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+  }
+}
+
+.blue {
+  color: #3A80BA !important ;
+}
