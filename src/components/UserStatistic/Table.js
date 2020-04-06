@@ -4,7 +4,7 @@ import StatisticService from "../../services/statistic-service";
 
 const statisticService = new StatisticService();
 const { getStatistic } = statisticService;
-const Table = ({changeNumberOfPages, page, numberOfPages}) => {
+const Table = ({changeNumberOfPages, page, numberOfPages, elements}) => {
 
     const [loading, setLoading] = useState(true);
 
@@ -44,8 +44,9 @@ const Table = ({changeNumberOfPages, page, numberOfPages}) => {
                 }
             });
         };
+        setLoading(true);
         setTableData((state) => {
-            getStats(page, state.pageData.elements)
+            getStats(page, elements)
             return {
                 ...state,
                 pageData: {
@@ -55,7 +56,7 @@ const Table = ({changeNumberOfPages, page, numberOfPages}) => {
             }
         })
         setLoading(false);
-    }, [page, changeNumberOfPages, numberOfPages])
+    }, [page, changeNumberOfPages, numberOfPages, elements])
 
     if (!loading) {
         return (

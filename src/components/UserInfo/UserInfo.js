@@ -38,8 +38,24 @@ const UserInfo = (props) => {
         getUser(userInfo.from, userInfo.to);
     }, [props, userInfo.from, userInfo.to])
 
-
-
+    const changeDate = (which, date) => {
+        console.log(date);
+        if (which === 'from') {
+            setUserInfo((state) => {
+                return {
+                    ...state,
+                    from: date
+                }
+            })
+        }   else {
+            setUserInfo((state) => {
+                return {
+                    ...state,
+                    to: date
+                }
+            })
+        }
+    }
 
     const pages = [
         {title: 'Main page', path: "/"},
@@ -53,6 +69,8 @@ const UserInfo = (props) => {
                 <h2>
                     {userInfo.first_name + " " + userInfo.last_name}
                 </h2>
+                <div>From<input onChange={(e) => changeDate("from", e.target.value)} value={userInfo.from} type="date"/></div>
+                <div>To<input onChange={(e) => changeDate("to", e.target.value)} value={userInfo.to} type="date" /></div>
                 <Charts statistic={userInfo.statistic}/>
             </section>
         )
